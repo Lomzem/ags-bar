@@ -1,4 +1,7 @@
 {
+    "scripts": {
+        "build": "ags bundle app.ts build/agsbar"
+    },
     "dependencies": {
         "ags": "*",
         "gnim": "*",
