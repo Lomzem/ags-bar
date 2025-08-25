@@ -1,0 +1,110 @@
+$fg-color: #eceff4;
+$bg-color: #242933;
+$bg2-color: #2e3440;
+$bg3-color: #3b4252;
+$font-family: CaskaydiaMono Nerd Font Propo;
+
+$blue: #5e81ac;
+$yellow: #ebcb8b;
+$green: #a3be8c;
+$magenta: #b48ead;
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: $font-family;
+  font-size: 20px;
+}
+
+.green {
+  color: $green;
+}
+.yellow {
+  color: $yellow;
+}
+.magenta {
+  color: $magenta;
+}
+.font-large {
+  font-size: 24px;
+}
+
+popover {
+  background: transparent;
+  border-color: transparent;
+  margin-left: 20px;
+
+  arrow {
+    background: transparent;
+    border-color: transparent;
+  }
+  contents {
+    background: $bg2-color;
+    border-color: transparent;
+    box-shadow: none;
+    padding: 8px;
+  }
+}
+
+.lol {
+  margin-left: 15px;
+  min-width: 200px;
+}
+
+
+scale {
+  min-height: 16px;
+  border-radius: 16px;
+
+  /* slider { */
+  /*     all: unset; */
+  /*     min-height: 18px; */
+  /*     min-width: 18px; */
+  /*     margin: -8px; */
+/* } */
+
+  trough {
+    outline: none;
+    background-color: $bg3-color;
+    border-radius: 24px;
+    min-height: 20px;
+
+    slider {
+      background-color: $fg-color;
+    }
+
+    highlight {
+      background-color: $blue;
+      border-radius: 24px;
+    }
+  }
+}
+
+window.Bar {
+  background: transparent;
+  color: $fg-color;
+
+  > centerbox {
+    background: $bg-color;
+    border-radius: 8px;
+    padding: 16px 16px;
+    margin: 16px 0px 16px 16px;
+  }
+
+  .volume-box > label {
+    margin: 0 6px 0 0;
+  }
+
+  button {
+    background: $bg-color;
+  }
+
+  box > * {
+    margin: 12px 0px;
+  }
+
+  .datetime {
+    line-height: 1.25;
+    text-transform: uppercase;
+  }
+}
