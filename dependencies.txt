@@ -1,0 +1,8 @@
+# Must be installed via AUR
+
+aylurs-gtk-shell-git
+
+# Astal library dependencies
+libastal-network-git
+libastal-mpris-git
+libastal-wireplumber-git
