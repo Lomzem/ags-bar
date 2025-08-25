@@ -2,6 +2,8 @@
 
 Simple AGS Bar
 
+![Bar](./assets/2025-08-24-bar.png)
+
 ## Installation
 
 ### Install Dependencies
