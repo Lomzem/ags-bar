@@ -34,7 +34,6 @@ function VolumeWidget() {
       direction={Gtk.ArrowType.RIGHT}
       onNotifyActive={() => {
         setChildRevealed(!childRevealed.get())
-        print("clicked")
       }}
     >
       <box class="volume-box magenta">
@@ -138,19 +137,24 @@ function DateTimeWidget() {
   })
 
   return (
-    <>
-      <label
-        class="datetime yellow"
-        label={date}
-        justify={Gtk.Justification.CENTER}
-      />
-      <Gtk.Separator class="separator" />
-      <label
-        class="datetime green"
-        label={time}
-        justify={Gtk.Justification.CENTER}
-      />
-    </>
+    <menubutton direction={Gtk.ArrowType.RIGHT}>
+      <box orientation={Gtk.Orientation.VERTICAL}>
+        <label
+          class="datetime yellow"
+          label={date}
+          justify={Gtk.Justification.CENTER}
+        />
+        <Gtk.Separator class="separator" />
+        <label
+          class="datetime green"
+          label={time}
+          justify={Gtk.Justification.CENTER}
+        />
+      </box>
+      <popover>
+        <Gtk.Calendar />
+      </popover>
+    </menubutton>
   )
 }
 

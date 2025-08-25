@@ -32,6 +32,15 @@ $magenta: #b48ead;
   font-size: 24px;
 }
 
+calendar {
+  background: $bg-color;
+  color: $fg-color;
+
+  .today {
+    background: $blue;
+  }
+}
+
 popover {
   background: transparent;
   border-color: transparent;
@@ -64,8 +73,8 @@ scale {
     }
 
     highlight {
-      background-color: $blue;
-      border-radius: 24px;
+      background-color: $magenta;
+      border-radius: 24px 0 0 24px;
     }
   }
 }
