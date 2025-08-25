@@ -4,6 +4,25 @@ import { createPoll } from "ags/time"
 import GLib from "gi://GLib?version=2.0"
 import { createBinding, createState } from "gnim"
 import AstalWp from "gi://AstalWp"
+import AstalBattery from "gi://AstalBattery"
+
+function BatteryWidget() {
+  const battery = AstalBattery.get_default()
+
+  const percent = createBinding(
+    battery,
+    "percentage",
+  )((p) => `${Math.floor(p * 100)}%`)
+
+  return (
+    <menubutton visible={createBinding(battery, "isPresent")}>
+      <box class="battery-box blue">
+        <label label={percent} />
+        <image iconName={createBinding(battery, "iconName")} />
+      </box>
+    </menubutton>
+  )
+}
 
 function VolumeWidget() {
   const [childRevealed, setChildRevealed] = createState(false)
@@ -20,6 +39,7 @@ function VolumeWidget() {
       <box class="volume-box magenta">
         <label
           class="font-large"
+          justify={Gtk.Justification.CENTER}
           label={createBinding(speaker, "volume").as((v) =>
             Math.round(v * 100).toString(),
           )}
@@ -107,6 +127,8 @@ export default function Bar(gdkmonitor: Gdk.Monitor) {
     >
       <centerbox cssName="centerbox" orientation={Gtk.Orientation.VERTICAL}>
         <box $type="end" orientation={Gtk.Orientation.VERTICAL}>
+          <BatteryWidget />
+          <Gtk.Separator class="separator" />
           <VolumeWidget />
           <Gtk.Separator class="separator" />
           <NetworkWidget />

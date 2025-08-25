@@ -8,9 +8,6 @@ importers:
 
   .:
     dependencies:
-      astal:
-        specifier: /usr/share/astal/gjs
-        version: link:../../../usr/share/astal/gjs
       gnim:
         specifier: '*'
         version: 1.6.3

@@ -4,7 +4,6 @@
         "install-bin": "cp build/agsbar /usr/local/bin/agsbar"
     },
     "dependencies": {
-        "ags": "*",
         "gnim": "*",
         "sass": "^1.90.0"
     },
