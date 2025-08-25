@@ -1,6 +1,7 @@
 {
     "scripts": {
-        "build": "ags bundle app.ts build/agsbar"
+        "build": "ags bundle app.ts build/agsbar",
+        "install-bin": "cp build/agsbar /usr/local/bin/agsbar"
     },
     "dependencies": {
         "ags": "*",
