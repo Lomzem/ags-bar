@@ -1,0 +1,1 @@
+- [ ] Fix rounding of audio bar on right side
