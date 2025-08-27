@@ -158,10 +158,10 @@ function NetworkWidget() {
 }
 
 function DateTimeWidget() {
-  const date = createPoll("", 1000 * 60, () => {
+  const date = createPoll("", 1000 * 3, () => {
     return GLib.DateTime.new_now_local().format("%a\n%d")!
   })
-  const time = createPoll("", 1000 * 60, () => {
+  const time = createPoll("", 1000 * 3, () => {
     return GLib.DateTime.new_now_local().format("%H\n%M")!
   })
 
