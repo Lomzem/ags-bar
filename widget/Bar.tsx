@@ -7,19 +7,46 @@ import AstalWp from "gi://AstalWp"
 import AstalBattery from "gi://AstalBattery"
 import AstalNetwork from "gi://AstalNetwork"
 
+function Tray() {
+  const tray = AstalTray.get_default()
+  const items = createBinding(tray, "items")
+
+  const init = (btn: Gtk.MenuButton, item: AstalTray.TrayItem) => {
+    btn.menuModel = item.menuModel
+    btn.insert_action_group("dbusmenu", item.actionGroup)
+    item.connect("notify::action-group", () => {
+      btn.insert_action_group("dbusmenu", item.actionGroup)
+    })
+  }
+
+  return (
+    <box>
+      <For each={items}>
+        {(item) => (
+          <menubutton $={(self) => init(self, item)}>
+            <image gicon={createBinding(item, "gicon")} />
+          </menubutton>
+        )}
+      </For>
+    </box>
+  )
+}
+
 function BatteryWidget() {
   const battery = AstalBattery.get_default()
 
   const percent = createBinding(
     battery,
     "percentage",
-  )((p) => `${Math.floor(p * 100)}%`)
+  )((p) => `${Math.floor(p * 100)}`)
 
   return (
     <menubutton visible={createBinding(battery, "isPresent")}>
-      <box class="battery-box blue">
-        <label label={percent} />
-        <image iconName={createBinding(battery, "iconName")} />
+      <box orientation={Gtk.Orientation.VERTICAL} halign={Gtk.Align.CENTER}>
+        <box class="battery-box blue">
+          <label label={percent} />
+          <image iconName={createBinding(battery, "iconName")} />
+        </box>
       </box>
     </menubutton>
   )
@@ -36,19 +63,21 @@ function VolumeWidget() {
         setChildRevealed(!childRevealed.get())
       }}
     >
-      <box class="volume-box magenta">
-        <label
-          class="font-large"
-          justify={Gtk.Justification.CENTER}
-          label={createBinding(speaker, "volume").as((v) =>
-            Math.round(v * 100).toString(),
-          )}
-        />
-        <Gtk.Image
-          iconName="audio-volume-high-symbolic"
-          iconSize={Gtk.IconSize.NORMAL}
-          cssName="volume magenta"
-        />
+      <box orientation={Gtk.Orientation.VERTICAL} halign={Gtk.Align.CENTER}>
+        <box class="volume-box magenta">
+          <label
+            class="font-large"
+            justify={Gtk.Justification.CENTER}
+            label={createBinding(speaker, "volume").as((v) =>
+              Math.round(v * 100).toString(),
+            )}
+          />
+          <Gtk.Image
+            iconName="audio-volume-high-symbolic"
+            iconSize={Gtk.IconSize.NORMAL}
+            cssName="volume magenta"
+          />
+        </box>
       </box>
       <popover>
         <revealer
