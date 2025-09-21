@@ -1,13 +1,40 @@
+/* $font-family: CaskaydiaMono Nerd Font Propo; */
+$font-family: JetBrainsMono Nerd Font Propo;
+/* $font-family: UbuntuMono Nerd Font Propo; */
+
+/* Nordic */
+/*
 $fg-color: #eceff4;
 $bg-color: #242933;
 $bg2-color: #2e3440;
 $bg3-color: #3b4252;
-$font-family: CaskaydiaMono Nerd Font Propo;
-
 $blue: #5e81ac;
 $yellow: #ebcb8b;
 $green: #a3be8c;
 $magenta: #b48ead;
+*/
+
+/* Catppuccin Mocha */
+/*
+$fg-color: #cdd6f4;
+$bg-color: #1e1e2e;
+$bg2-color: #313244;
+$bg3-color: #45475a;
+$blue: #89b4fa;
+$yellow: #f9e2af;
+$green: #a6e3a1;
+$magenta: #cba6f7;
+*/
+
+/* Vague */
+$fg-color: #cdcdcd;
+$bg-color: hsl(240, 2%, 8%);
+$bg2-color: hsl(240, 2%, 12%);
+$bg3-color: hsl(240, 2%, 16%);
+$blue: #8ba9c1;
+$yellow: #f3be7c;
+$green: #99b782;
+$magenta: #c9b1ca;
 
 * {
   margin: 0;
@@ -86,6 +113,7 @@ window.Bar {
   > centerbox {
     background: $bg-color;
     border-radius: 8px;
+    opacity: 0.9;
     padding: 16px 16px;
     margin: 16px 0px 16px 16px;
   }
