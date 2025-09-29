@@ -1,5 +1,5 @@
-/* $font-family: CaskaydiaMono Nerd Font Propo; */
-$font-family: JetBrainsMono Nerd Font Propo;
+$font-family: CaskaydiaMono Nerd Font Propo;
+/* $font-family: JetBrainsMono Nerd Font Propo; */
 /* $font-family: UbuntuMono Nerd Font Propo; */
 
 /* Nordic */
@@ -14,6 +14,16 @@ $green: #a3be8c;
 $magenta: #b48ead;
 */
 
+/* Gruvbox Material */
+$fg-color: #cdd6f4;
+$bg-color: #1d2021;
+$bg2-color: #282828;
+$bg3-color: #282828;
+$blue: #80aa9e;
+$yellow: #e9b143;
+$green: #b0b846;
+$magenta: #d3869b;
+
 /* Catppuccin Mocha */
 /*
 $fg-color: #cdd6f4;
@@ -27,6 +37,7 @@ $magenta: #cba6f7;
 */
 
 /* Vague */
+/*
 $fg-color: #cdcdcd;
 $bg-color: hsl(240, 2%, 8%);
 $bg2-color: hsl(240, 2%, 12%);
@@ -35,6 +46,7 @@ $blue: #8ba9c1;
 $yellow: #f3be7c;
 $green: #99b782;
 $magenta: #c9b1ca;
+*/
 
 * {
   margin: 0;
@@ -115,7 +127,7 @@ window.Bar {
     border-radius: 8px;
     opacity: 0.9;
     padding: 16px 16px;
-    margin: 16px 0px 16px 16px;
+    margin: 10px 0px 10px 10px;
   }
 
   .battery-box > label {
