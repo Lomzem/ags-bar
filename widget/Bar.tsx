@@ -201,6 +201,9 @@ export default function Bar(gdkmonitor: Gdk.Monitor) {
       application={app}
     >
       <centerbox cssName="centerbox" orientation={Gtk.Orientation.VERTICAL}>
+        <box $type="start" orientation={Gtk.Orientation.VERTICAL}>
+          <label label={"👻"} class="profile" />
+        </box>
         <box $type="end" orientation={Gtk.Orientation.VERTICAL}>
           <BatteryWidget />
           <Gtk.Separator class="separator" />

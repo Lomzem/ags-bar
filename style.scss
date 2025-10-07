@@ -1,6 +1,7 @@
-$font-family: CaskaydiaMono Nerd Font Propo;
+/* $font-family: CaskaydiaMono Nerd Font Propo; */
 /* $font-family: JetBrainsMono Nerd Font Propo; */
 /* $font-family: UbuntuMono Nerd Font Propo; */
+$font-family: FiraCode Nerd Font Propo;
 
 /* Nordic */
 /*
@@ -15,6 +16,7 @@ $magenta: #b48ead;
 */
 
 /* Gruvbox Material */
+/*
 $fg-color: #cdd6f4;
 $bg-color: #1d2021;
 $bg2-color: #282828;
@@ -23,9 +25,9 @@ $blue: #80aa9e;
 $yellow: #e9b143;
 $green: #b0b846;
 $magenta: #d3869b;
+*/
 
 /* Catppuccin Mocha */
-/*
 $fg-color: #cdd6f4;
 $bg-color: #1e1e2e;
 $bg2-color: #313244;
@@ -34,7 +36,6 @@ $blue: #89b4fa;
 $yellow: #f9e2af;
 $green: #a6e3a1;
 $magenta: #cba6f7;
-*/
 
 /* Vague */
 /*
@@ -69,6 +70,10 @@ $magenta: #c9b1ca;
 }
 .font-large {
   font-size: 24px;
+}
+
+.profile {
+  font-size: 48px;
 }
 
 calendar {
